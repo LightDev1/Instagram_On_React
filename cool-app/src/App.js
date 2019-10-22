@@ -10,6 +10,6 @@ function App() {
         <Feed/>
     </div>
   );
-};
+}
 
 export default App;
