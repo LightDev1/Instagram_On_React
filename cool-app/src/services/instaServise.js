@@ -27,6 +27,7 @@ export default class InstaServise {
 
     getAllProfiles = async () => {
         const res = await this.getResource('/posts/');
+        console.log(res);
         return res.map(this._transformProfiles);
     }
 
@@ -40,9 +41,11 @@ export default class InstaServise {
     _transformProfiles = (profile) => {
         return {
             name: profile.name,
-            src: profile.src,
-            alt: profile.alt
+            alt: profile.alt,
+            photo: profile.photo
         }
+     console.log(profile);
+        
     }
 
 }
