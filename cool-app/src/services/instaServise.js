@@ -20,4 +20,29 @@ export default class InstaServise {
         return res;
     }
 
+    getAllPhotos = async () => {
+        const res = await this.getResource('/posts/');
+        return res.map(this._transformPosts);
+    }
+
+    getAllProfiles = async () => {
+        const res = await this.getResource('/posts/');
+        return res.map(this._transformProfiles);
+    }
+
+    _transformPosts = (post) => {
+        return {
+            src: post.src,
+            alt: post.alt
+        }
+    }
+
+    _transformProfiles = (profile) => {
+        return {
+            name: profile.name,
+            src: profile.src,
+            alt: profile.alt
+        }
+    }
+
 }
